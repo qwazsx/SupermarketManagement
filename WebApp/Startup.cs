@@ -41,6 +41,7 @@ namespace WebApp
             services.AddTransient<IAddCategoryUseCase, AddCategoryUseCase>();
             services.AddTransient<IEditCategoryUseCase, EditCategoryUseCase>();
             services.AddTransient<IGetCategoryByIdUseCase, GetCategoryByIdUseCase>();
+            services.AddTransient<IDeleteCategoryUseCase, DeleteCategoryUseCase>();
 
         }
 
