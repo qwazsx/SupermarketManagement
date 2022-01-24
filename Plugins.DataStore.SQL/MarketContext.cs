@@ -18,6 +18,14 @@ namespace Plugins.DataStore.SQL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            modelBuilder.Entity<Product>().HasData(
+                new Product { ProductId = 1, CategoryId = 1, Name = "Iced Tea", Quantity = 100, Price = 1.99 },
+                new Product { ProductId = 2, CategoryId = 1, Name = "Canada Dry", Quantity = 200, Price = 1.99 },
+                new Product { ProductId = 3, CategoryId = 2, Name = "Whole Wheat Bread", Quantity = 300, Price = 1.50 },
+                new Product { ProductId = 4, CategoryId = 2, Name = "White Bread", Quantity = 300, Price = 1.50 },
+                new Product { ProductId = 5, CategoryId = 2, Name = "Drum", Quantity = 150, Price = 1.61 }
+                );
             modelBuilder.Entity<Category>()
                 .HasMany(c => c.Products)
                 .WithOne(p => p.Category)
@@ -28,14 +36,6 @@ namespace Plugins.DataStore.SQL
                 new Category { CategoryId = 1, Name = "Beverage", Description = "Beverage" },
                 new Category { CategoryId = 2, Name = "Bakery", Description = "Bakery" },
                 new Category { CategoryId = 3, Name = "Meat", Description = "Meat" }
-                );
-
-            modelBuilder.Entity<Product>().HasData(
-                new Product { ProductId = 1, CategoryId = 1, Name = "Iced Tea", Quantity = 100, Price = 1.99 },
-                new Product { ProductId = 2, CategoryId = 1, Name = "Canada Dry", Quantity = 200, Price = 1.99 },
-                new Product { ProductId = 3, CategoryId = 2, Name = "Whole Wheat Bread", Quantity = 300, Price = 1.50 },
-                new Product { ProductId = 4, CategoryId = 2, Name = "White Bread", Quantity = 300, Price = 1.50 },
-                new Product { ProductId = 4, CategoryId = 2, Name = "Drum", Quantity = 150, Price = 1.61 }
                 );
         }
     }
