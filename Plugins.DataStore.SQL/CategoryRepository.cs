@@ -34,17 +34,20 @@ namespace Plugins.DataStore.SQL
 
         public IEnumerable<Category> GetCategories()
         {
-            throw new NotImplementedException();
+            return db.Categories.ToList();
         }
 
         public Category GetCategoryById(int categoryId)
         {
-            throw new NotImplementedException();
+            return db.Categories.Find(categoryId);
         }
 
         public void UpdateCategory(Category category)
         {
-            throw new NotImplementedException();
+            var cat = db.Categories.Find(category.CategoryId);
+            cat.Name = category.Name;
+            cat.Description = category.Description;
+            db.SaveChanges();
         }
     }
 }
