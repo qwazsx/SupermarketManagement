@@ -40,6 +40,12 @@ namespace WebApp
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminOnly", p=> p.RequireClaim("Position","Admin"));
+                options.AddPolicy("CashierOnly", p=> p.RequireClaim("Position", "Cashier"));
+            });
+
             //dependency injection for in-memory data store
             //services.AddScoped<ICategoryRepository, CategoryInMemoryRepository>();
             //services.AddScoped<IProductRepository, ProductInMemoryRepository>();
