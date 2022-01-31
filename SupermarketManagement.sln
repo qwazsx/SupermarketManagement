@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreBusiness", "CoreBusines
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Plugins.DataStore.InMemory", "Plugins.DataStore.InMemory\Plugins.DataStore.InMemory.csproj", "{19CC69A8-D895-48CF-8E5E-4E88A794D45E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugins.DataStore.SQL", "Plugins.DataStore.SQL\Plugins.DataStore.SQL.csproj", "{67A0458B-1C8C-46AF-A1CB-569823346FF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Plugins.DataStore.SQL", "Plugins.DataStore.SQL\Plugins.DataStore.SQL.csproj", "{67A0458B-1C8C-46AF-A1CB-569823346FF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
